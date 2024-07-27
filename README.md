@@ -39,4 +39,4 @@ SQL_ALCHEMY_DATABASE_URL = 'postgresql://postgres:{your password}@{Host Name}/{N
 ```
 
 ### Video Demonstration
-The following url contains an video link demonstrating the project: 
+The following url contains an video link demonstrating the project: https://youtu.be/RcJv80AMjko
