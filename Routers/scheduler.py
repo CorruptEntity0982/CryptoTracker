@@ -3,6 +3,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 from database import SessionLocal
 from .updatePrice import update_prices
 
+
 scheduler = BackgroundScheduler()
 
 def schedule_price_update():
@@ -15,7 +16,7 @@ def schedule_price_update():
         print(f"Error during price update: {e}")
     finally:
         db.close()
-    scheduler.add_job(schedule_price_update, IntervalTrigger(minutes=1))
+    scheduler.add_job(schedule_price_update, IntervalTrigger(hours=1))
     print("Job scheduled")
 
 if __name__ == "__main__":

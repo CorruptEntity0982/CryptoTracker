@@ -1,7 +1,13 @@
 import requests
 from sqlalchemy.orm import Session
-from models import Crypto
+from models import Crypto,Alert, Users
 from fastapi import APIRouter, Depends, HTTPException,status,Path 
+import requests
+from sqlalchemy.orm import Session
+from models import Crypto, Alert
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import smtplib
 
 COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc"
 
@@ -9,6 +15,26 @@ router = APIRouter(
     prefix='/updatePrice',
     tags=['updatePrice']
 )
+
+COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc"
+
+GMAIL_USERNAME = "shashank02.dubey@gmail.com"
+GMAIL_PASSWORD = "lqnu dmog npkg ojei"
+
+def send_otp_email(email,crypto):
+    subject = "Your Cryto alert has been triggered"
+    body = f"Your alert for crypto: {crypto} has been triggered"
+
+    msg = MIMEMultipart()
+    msg.attach(MIMEText(body, 'plain'))
+    msg['Subject'] = subject
+    msg['From'] = GMAIL_USERNAME
+    msg['To'] = email
+
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        server.starttls()
+        server.login(GMAIL_USERNAME, GMAIL_PASSWORD)
+        server.sendmail(GMAIL_USERNAME, email, msg.as_string())
 
 def update_prices(db: Session):
     print("Control is here at update prices")
@@ -28,5 +54,16 @@ def update_prices(db: Session):
         else:
             crypto = Crypto(id=crypto_id, cryptoName=crypto_name, price=current_price)
             db.add(crypto)
-
+    
+    db.commit()
+    print("Control is checking alerts")
+    alerts = db.query(Alert).filter(Alert.isActive == False).all()
+    for alert in alerts:
+        crypto = db.query(Crypto).filter(Crypto.id == alert.cryptoName).first()
+        if crypto and crypto.price > alert.alertPrice:
+            print("Check: Alert triggered for", alert.cryptoName)
+            user = db.query(Users).filter(Users.username == alert.owner_name).first()
+            send_otp_email(user.email,alert.cryptoName)
+            alert.isActive = True
+            db.add(alert)
     db.commit()

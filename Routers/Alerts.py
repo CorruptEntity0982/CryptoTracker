@@ -61,30 +61,3 @@ async def read_all_triggeredAlerts(db: db_dependancy,user: user_dependancy):
     if user is None:
         raise HTTPException(status_code=401,detail="Authentication failed")
     return db.query(Alert).filter(Alert.owner_name == user.get('username')).filter(Alert.isActive == True).all()
-
-
-
-
-
-
-
-
-# @router.put("/todos/{id}",status_code=status.HTTP_204_NO_CONTENT)
-# async def update_todo(user:user_dependancy,db:db_dependancy,todo_id:int, request: TodoRequest):
-#     if user is None:
-#         raise HTTPException(status_code=401,detail="Authentication failed")
-    
-#     todo_model = db.query(Todos).filter(Todos.id==todo_id)\
-#         .filter(Todos.owner_id==user.get('id')).first()
-   
-#     if todo_model is None:
-#         raise HTTPException(status_code=404,detail="Todo not found")
-    
-#     todo_model.title = request.title
-#     todo_model.descp = request.descp
-#     todo_model.complete = request.complete
-#     todo_model.priority = request.priority
-#     db.add(todo_model)
-#     db.commit()
-
-
