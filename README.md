@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hi, My name is Shashank Dubey, A computer science and engineering student from Vellore Institute of Technology, your company tanX.fi has recently come to my university for college placements. After going through the Job description, the role you're offering aligns with my interests, however i'm not able to apply through my university for this role as I have a standing backlog (Due to oversight in my answer script, re-evaluation of my test in in progress and I will clear the backlog by Decemeber 2024). 
+Hi, My name is Shashank Dubey, A computer science and engineering student from Vellore Institute of Technology, your company tanX.fi has recently come to my university for college placements. After going through the Job description, the role you're offering aligns with my interests, however i'm not able to apply through my university for this role as I have a standing backlog (Due to oversight in my answer script, re-evaluation of my test is in progress and I will clear the backlog by Decemeber 2024). 
 I have attempted the backend assignment that was part of the mail i've received.
 
 
@@ -20,6 +20,7 @@ Also ive used "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&or
 ### Contact me
 Kindly contact me at shashank02.dubey@gmail.com should you be interest in pursing me as a candidate for this role.
 Attached is my resume: https://drive.google.com/file/d/1Ps5l05m9Ypwu_z1dXZ0JZclRzVixXeTL/view?usp=share_link
+LinkedIn: https://www.linkedin.com/in/shashank-dubey-b3684a21b/
 Please dont report me to the university officials :)
 
 ### Project setup instructions
@@ -36,7 +37,6 @@ In the "Database.py" file, edit the following line
 ```
 SQL_ALCHEMY_DATABASE_URL = 'postgresql://postgres:{your password}@{Host Name}/{Name of your database}'
 ```
-
 
 ### Video Demonstration
 The following url contains an video link demonstrating the project: 
