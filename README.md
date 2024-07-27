@@ -25,8 +25,14 @@ Please dont report me to the university officials :)
 ### Project setup instructions
 kindly run the following command to install all dependencies on your local machine
 ```
-
+pip install -r requirements.txt
 ```
+Incase "SSH"ing into my database doesnt work, please follow the following steps to set up the database on your local machine,
+In the "Database.py" file, edit the following line
+```
+SQL_ALCHEMY_DATABASE_URL = 'postgresql://postgres:{your password}@localhost/{Name of your database}'
+```
+
 
 ### Video Demonstration
 The following url contains an video link demonstrating the project: 
