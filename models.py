@@ -18,6 +18,5 @@ class Alert(Base):
     cryptoName = Column(String)
     alertPrice =  Column(Integer)
     isActive = Column(Boolean)
-    current_price = Column(Integer,ForeignKey("crypto.price"))
     owner_name = Column(String, ForeignKey("users.username"))
     

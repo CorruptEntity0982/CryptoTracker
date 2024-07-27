@@ -11,8 +11,8 @@ router = APIRouter(
 )
 
 def update_prices(db: Session):
+    print("Control is here at update prices")
     response = requests.get(COINGECKO_URL)
-    
     if response.status_code != 200:
         raise Exception(f"Error fetching data: {response.status_code}")
 
