@@ -16,6 +16,6 @@ Similarly, say, the current price of BTC is 35,000$, a user sets an alert for BT
 33,000$. The application should send an email when the price of BTC reaches 33,000$.
 
 I've used fastapi(python library for creating these endpoints) along with email STMP services.
-Also ive used "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=ma" to get the prices of cryptocurrencies as Binance has a pay wall.
+Also ive used "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=ma" to get the prices of cryptocurrencies as "Binance.com" has a pay wall to generate an api-key.
 
 The following url contains an video link demonstrating the project.
