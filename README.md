@@ -34,7 +34,7 @@ uvicorn main:app --reload
 Incase "SSH"ing into my database doesnt work, please follow the following steps to set up the database on your local machine,
 In the "Database.py" file, edit the following line
 ```
-SQL_ALCHEMY_DATABASE_URL = 'postgresql://postgres:{your password}@localhost/{Name of your database}'
+SQL_ALCHEMY_DATABASE_URL = 'postgresql://postgres:{your password}@{Host Name}/{Name of your database}'
 ```
 
 
