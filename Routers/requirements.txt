@@ -1,0 +1,6 @@
+fastapi
+sqlalchemy
+pydantic
+passlib
+python-jose
+psycopg2-binary
