@@ -9,10 +9,10 @@ I have attempted the backend assignment that was part of the mail i've received.
 ### Application Overview
 Create a price alert application that triggers an email when the user’s target price is
 Achieved.
-Say, the current price of BTC is $28,000, a user sets an alert for BTC at a price of 33,000$.
-The application should send an email to the user when the price of BTC reaches 33,000$.
-Similarly, say, the current price of BTC is 35,000$, a user sets an alert for BTC at a price of
-33,000$. The application should send an email when the price of BTC reaches 33,000$.
+Say, the current price of BTC is 28,000, a user sets an alert for BTC at a price of 33,000.
+The application should send an email to the user when the price of BTC reaches 33,000.
+Similarly, say, the current price of BTC is 35,000, a user sets an alert for BTC at a price of
+33,000. The application should send an email when the price of BTC reaches 33,000.
 
 I've used fastapi(python library for creating these endpoints) along with email STMP services.
 Also ive used "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=ma" to get the prices of cryptocurrencies as "Binance.com" has a pay wall to generate an api-key.
@@ -26,6 +26,10 @@ Please dont report me to the university officials :)
 kindly run the following command to install all dependencies on your local machine
 ```
 pip install -r requirements.txt
+```
+To run the application
+```
+uvicorn main:app --reload
 ```
 Incase "SSH"ing into my database doesnt work, please follow the following steps to set up the database on your local machine,
 In the "Database.py" file, edit the following line
