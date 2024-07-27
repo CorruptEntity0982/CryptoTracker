@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ```
 To run the application
 ```
-uvicorn main:app --reload
+python3 -m uvicorn main:app --reload
 ```
 Incase "SSH"ing into my database doesnt work, please follow the following steps to set up the database on your local machine,
 In the "Database.py" file, edit the following line
