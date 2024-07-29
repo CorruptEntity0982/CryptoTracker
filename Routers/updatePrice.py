@@ -8,6 +8,8 @@ from models import Crypto, Alert
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
+import os
+from dotenv import load_dotenv
 
 COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc"
 
@@ -18,8 +20,8 @@ router = APIRouter(
 
 COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc"
 
-GMAIL_USERNAME = "shashank02.dubey@gmail.com"
-GMAIL_PASSWORD = "lqnu dmog npkg ojei"
+GMAIL_USERNAME = os.getenv('EMAIL_USER')
+GMAIL_PASSWORD = os.getenv('EMAIL_PASS')
 
 def send_otp_email(email,crypto):
     subject = "Your Cryto alert has been triggered"

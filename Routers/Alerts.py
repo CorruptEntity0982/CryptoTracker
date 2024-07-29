@@ -43,7 +43,7 @@ async def delete_alert(user:user_dependancy,db:db_dependancy,id:int):
     if user is None:
         raise HTTPException(status_code=401,detail="Authentication failed")
     
-    alert_model = db.query(Alert).filter(Alert.alert_id ==id).first()
+    alert_model = db.query(Alert).filter(Alert.alert_id ==id and Alert.owner_name == Users.username).first()
     if alert_model is None:
         raise HTTPException(status_code=404, detail="alert not found")
     db.query(Alert).filter(Alert.alert_id == id).delete()
