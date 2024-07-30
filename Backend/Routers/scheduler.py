@@ -1,6 +1,6 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
-from Backend.database import SessionLocal
+from database import SessionLocal
 from .updatePrice import update_prices
 scheduler = BackgroundScheduler()
 
