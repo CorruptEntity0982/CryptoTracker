@@ -28,12 +28,12 @@ kindly run the following command to install all dependencies on your local machi
 ```
 pip install -r requirements.txt
 ```
-Create an .env file with the following information
+Create an .env file with the following information, inside the backend folder.
 ```
 EMAIL_USER = [Your email id] (Used to sent alerts to users on email)
 EMAIL_PASS = [App_Password for the gmail account] (Enable 2 factor auth on your google account, after which under security-> App_Passwords, you can create your own app password.)
 ```
-To run the application
+To run the application, cd into Backend folder
 ```
 python3 -m uvicorn main:app --reload
 ```
