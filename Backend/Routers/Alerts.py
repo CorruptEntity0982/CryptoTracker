@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException,status,Path
 from typing import Annotated
 from sqlalchemy.orm import Session
-from models import Crypto,Users,Alert
-from database import SessionLocal
+from Backend.models import Crypto,Users,Alert
+from Backend.database import SessionLocal
 from pydantic import BaseModel, Field
 from .auth import get_current_user
 

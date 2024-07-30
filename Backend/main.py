@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-import models
-from database import engine
+import Backend.models as models
+from Backend.database import engine
 from Routers import auth, users, updatePrice, Alerts
 from Routers.scheduler import schedule_price_update
 

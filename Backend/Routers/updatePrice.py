@@ -1,10 +1,10 @@
 import requests
 from sqlalchemy.orm import Session
-from models import Crypto,Alert, Users
+from Backend.models import Crypto,Alert, Users
 from fastapi import APIRouter, Depends, HTTPException,status,Path 
 import requests
 from sqlalchemy.orm import Session
-from models import Crypto, Alert
+from Backend.models import Crypto, Alert
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
