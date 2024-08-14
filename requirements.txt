@@ -6,4 +6,6 @@ python-jose
 psycopg2-binary
 requests
 python-dotenv
-
+uvicorn
+python-multipart
+APScheduler

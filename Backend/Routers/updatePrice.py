@@ -29,13 +29,13 @@ def send_otp_email(email,crypto):
     msg = MIMEMultipart()
     msg.attach(MIMEText(body, 'plain'))
     msg['Subject'] = subject
-    msg['From'] = GMAIL_USERNAME
+    msg['From'] = str(GMAIL_USERNAME)
     msg['To'] = email
 
     with smtplib.SMTP("smtp.gmail.com", 587) as server:
         server.starttls()
-        server.login(GMAIL_USERNAME, GMAIL_PASSWORD)
-        server.sendmail(GMAIL_USERNAME, email, msg.as_string())
+        server.login(str(GMAIL_USERNAME),str(GMAIL_PASSWORD))
+        server.sendmail(str(GMAIL_USERNAME), email, msg.as_string())
 
 def update_prices(db: Session):
     print("Control is here at update prices")
