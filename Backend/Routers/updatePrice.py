@@ -9,9 +9,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc"
 
 router = APIRouter(
